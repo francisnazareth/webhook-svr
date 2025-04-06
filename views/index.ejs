@@ -1,0 +1,50 @@
+<!-- views/index.ejs -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API Approvals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <h1>GDX API Approvals</h1>
+    
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Requester</th>
+                <th>API Requested</th>
+                <th>Justification</th>
+                <th>API Provider</th>
+                <th width="140px">Action</th>
+            </tr>  
+        </thead> 
+        <tbody
+        <% messages.forEach(message=> { %>
+            <tr>
+                <td><%= message.Requester %></td>
+                <td><%= message.APIRequested %></td>
+                <td><%= message.Justification %></td>
+                <td><%= message.APIProvider %></td>
+                <form action="/approve-request" method="post">
+                <td>        
+                    <input type="hidden" name="index" value="<%= messages.indexOf(message) %>">
+                    <input type="submit" value="Approve" class="btn btn-primary"/>
+                </td>
+                </form>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+</body>
+</html>
