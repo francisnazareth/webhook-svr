@@ -1,0 +1,49 @@
+<!-- views/index.ejs -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Request for API Access</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <h1>Request for API Access</h1>
+    
+    <form action="/request-access" method="post">
+    <table class="table table-striped" width="50%" align="center">
+        <tbody
+                <tr>
+                    <td>Requester</td>
+                    <td><input type="text" id="APIRequester" name="APIRequester" size="20"/></td>
+                </tr>
+                <tr>
+                    <td>API Requested</td>
+                    <td><input type="text" id="APIRequested" name="APIRequested" size="20"/></td>
+                </tr>
+                <tr>
+                    <td>Justification</td>
+                    <td><input type="text" id="Justification" name="Justification" size="20"/></td>
+                </tr>
+                <tr>
+                    <td>API Provider</td>
+                    <td><input type="text" id="APIProvider" name="APIProvider" size="20"/></td>
+                </tr>
+               
+                <tr>
+                    <td>API Provider Email</td>
+                    <td><input type="text" id="APIProviderEmail" name="APIProviderEmail" size="20"/></td>
+                </tr>
+                
+                <tr>    
+                    <td colspan="2" align="center"><input type="submit" value="Request Access" class="btn btn-primary"/></td>
+                </tr>
+        </tbody>
+    </table>
+    </form>
+</body>
+</html>
