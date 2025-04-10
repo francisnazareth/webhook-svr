@@ -1,4 +1,4 @@
-<!-- views/index.ejs -->
+ <!-- views/index.ejs -->
 
 <!doctype html>
 <html lang="en">
@@ -34,7 +34,7 @@
                 <td><%= message.APIProvider %></td>
                 <form action="/approve-request" method="post">
                 <td>        
-                    <input type="hidden" name="index" value="<%= messages.indexOf(message) %>">
+                    <input type="hidden" name="index" value="<%= message.id  %>">
                     <input type="submit" value="Approve" class="btn btn-primary"/>
                 </td>
                 </form>
@@ -72,7 +72,7 @@
                 <td><%= message.APIProviderEmail %></td>
                 <form action="/approve-request" method="post">
                 <td>        
-                    <input type="hidden" name="index" value="<%= messages.indexOf(message) %>">
+                    <input type="hidden" name="index" value="<%= message.id %>">
                     <input type="submit" value="Approve" class="btn btn-primary"/>
                 </td>
                 </form>
